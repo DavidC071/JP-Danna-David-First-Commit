@@ -10,9 +10,10 @@ public class Main {
         ConsumoView view = new ConsumoView();
         Scanner scanner = new Scanner(System.in);
 
+        //Consumos aleatorios
         for (int d = 0; d < 30; d++) {
             for (int h = 0; h < 23; h++) {
-                consumo.setConsumo(d, h, Math.random() * 900);
+                consumo.setConsumo(d, h, Math.random() * 900); //LLena matriz
             }
         }
 
@@ -71,13 +72,16 @@ public class Main {
         }
     }
 
+    //Imprimir matriz
     public static void imprimirMatriz(ConsumokWH consumo) {
         System.out.println("\n Matriz De Consumos en kWh ");
-        double[][] matriz = consumo.getConsumos();
+        double[][] matriz = consumo.getConsumos(); //Obtiene Matriz
+
+        //Recorre Dias horas
         for (int d = 0; d < matriz.length; d++) {
             System.out.print("Día " + (d + 1) + ": ");
             for (int h = 0; h < 23; h++) {
-                System.out.printf("%.2f ", matriz[d][h]);
+                System.out.printf("%.2f ", matriz[d][h]); //Imprime Con Dos decimales
             }
             System.out.println();
             System.out.println();

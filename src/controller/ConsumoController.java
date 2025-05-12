@@ -9,7 +9,7 @@ public class ConsumoController {
     }
 
     public double hallarConsumoMinimo(ConsumokWH consumo) {
-        double min = Double.MAX_VALUE;
+        double min = Double.MAX_VALUE; // Valor Inic alt
         for (int d = 0; d < consumo.getTotalDias(); d++) {
             for (int h = 0; h < 23; h++) {
                 double valor = consumo.getConsumo(d, h);
@@ -22,7 +22,7 @@ public class ConsumoController {
     }
 
     public double hallarConsumoMaximo(ConsumokWH consumo) {
-        double max = Double.MIN_VALUE;
+        double max = Double.MIN_VALUE; // Valor Inic Min
         for (int d = 0; d < consumo.getTotalDias(); d++) {
             for (int h = 0; h < 23; h++) {
                 double valor = consumo.getConsumo(d, h);
@@ -34,6 +34,7 @@ public class ConsumoController {
         return max;
     }
 
+    // 3 Franjas
     public double[] hallarConsumoPorFranjas(ConsumokWH consumo) {
         double[] franjas = new double[3];
 
@@ -54,11 +55,11 @@ public class ConsumoController {
     }
 
     public double[] hallarConsumoPorDias(ConsumokWH consumo) {
-        double[] consumoDias = new double[consumo.getTotalDias()];
+        double[] consumoDias = new double[consumo.getTotalDias()]; //Areglo por dia
 
         for (int d = 0; d < consumo.getTotalDias(); d++) {
             for (int h = 0; h < 23; h++) {
-                consumoDias[d] += consumo.getConsumo(d, h);
+                consumoDias[d] += consumo.getConsumo(d, h); //Suma h de los dias
             }
         }
 
